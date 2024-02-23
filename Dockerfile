@@ -7,7 +7,6 @@ COPY buoygrab.py /buoygrab
 
 RUN pip install BeautifulSoup4
 RUN pip install requests
-RUN pip install time
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["python", "/buoygrab/buoygrab.py"]
