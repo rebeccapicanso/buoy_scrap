@@ -5,7 +5,7 @@ WORKDIR /buoygrab
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY buoygrab.py /buoygrab
 
-RUN pip install BeautifulSoup
+RUN pip install BeautifulSoup4
 RUN pip install requests
 RUN pip install time
 
