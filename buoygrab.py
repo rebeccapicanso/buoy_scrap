@@ -35,3 +35,27 @@ v = hsv[:,:,2]
 
 # write the hue to a file
 np.savetxt('h.txt', h)
+
+# # shift the hue
+    
+# # cv2 will clip automatically to avoid color wrap-around
+# huechange = 10   # 0 is no change; 0<=huechange<=180
+# hnew = cv2.add(h, huechange)
+
+# # combine new hue with s and v
+# hsvnew = cv2.merge([hnew,s,v])
+
+# # convert from HSV to BGR
+# result = cv2.cvtColor(hsvnew, cv2.COLOR_HSV2BGR)
+
+# # save result
+# cv2.imwrite('result.png', result)
+    
+# # decide if you should keep or not depending on the type of hue
+    
+    
+
+# if huechange < 10:
+#     print("keep")
+# else:
+#     print("discard")
