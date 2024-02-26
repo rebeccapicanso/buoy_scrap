@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>load_forever</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    #main {
+    font-family:Arial, Helvetica, sans-serif;
+    color:black;
+    font-size:10px;
+    margin-top: 0px;
+    }
+    </style>
+  </head>
+  <body>	
+    <div id='main'></div>
+    <script>	
+    // rewrite this to connect with data from the ocean.
+    // you could have it call to the current buoy conditions upon website reload,
+    // or constantly scrap the website & store data in database for reuse.
+    var c = 0;
+    var visitsSec = 47193;
+    var texts = 0.0108171;
+    var TextsPerSecond = visitsSec * texts;
+    var treeCo2 = 21.77;
+    var numEmojis = 0;
+    var image;
+    var x = 0;	
+    
+    var main = document.getElementById('main');
+    var last_height = 0;
+    
+    setInterval(function(){	
+    	c = c + TextsPerSecond;
+    	x = Math.floor((Math.random() * 9) +1);
+    	//numEmojis = Math.floor(TextsPerSecond / treeCo2);
+    	numStills = numStills + 1;
+    	console.log(numStills);	
+    
+    	image = document.createElement('img');
+    	image.style.width = '1.7%';
+    	image.style.height = 'auto';
+    	image.title = 'load-forever';
+    	image.setAttribute('src','still'+x+'.jpg');
+    	main.appendChild(image);
+    	var main_height = main.offsetHeight;
+    	//console.log(main_height);
+    	if(main_height > last_height) {
+    		//console.log("scroll");
+    		window.scrollTo(0,main_height);
+    	}
+    	last_height = main_height;
+    },23);	
+  
+    </script>	
+  </body>
+</html>
