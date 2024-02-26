@@ -4,6 +4,8 @@ import requests
 import os, time
 import cv2
 import numpy as np
+from PIL import Image
+from random import randrange
 
 
 # this is tracking a single buoy off the coast of the Aleutian Islands!
@@ -23,7 +25,10 @@ hours = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11',
 
 # create a loop to grab images for each hour
 
+count = 0
+
 for x in hours:
+    count =+ 1
     dynamic_url_Z64A = 'https://www.ndbc.noaa.gov/images/buoycam/Z64A_2024_02_' + yesterday + '_' + x + '10.jpg'
     img_data_Z64A = requests.get(dynamic_url_Z64A).content
 
@@ -33,3 +38,21 @@ for x in hours:
 
     with open(jpg_name_Z64A, 'wb') as handler:
         handler.write(img_data_Z64A)
+
+    # crop random square from image
+    img = Image.open(jpg_name_Z64A)
+    x, y = img.size
+
+    matrix = 250
+    sample = 10
+    sample_list = []
+
+    for i in range(sample):
+        x1 = randrange(0, x - matrix)
+        y1 = randrange(0, y - matrix)
+        sample_list.append(img.crop((x1, y1, x1 + matrix, y1 + matrix)))
+    
+    # save cropped images
+    for i in range(sample):
+        sample_list[i].save('still' + str(i) + '.jpg')
+
