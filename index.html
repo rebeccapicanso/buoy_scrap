@@ -18,12 +18,14 @@
     // rewrite this to connect with data from the ocean.
     // you could have it call to the current buoy conditions upon website reload,
     // or constantly scrap the website & store data in database for reuse.
+
+    // ignore insane variable names I'm workshopping that
     var c = 0;
     var visitsSec = 47193;
     var texts = 0.0108171;
     var TextsPerSecond = visitsSec * texts;
     var treeCo2 = 21.77;
-    var numEmojis = 0;
+    var numStills = 0;
     var image;
     var x = 0;	
     
@@ -40,7 +42,7 @@
     	image = document.createElement('img');
     	image.style.width = '1.7%';
     	image.style.height = 'auto';
-    	image.title = 'the ocean';
+    	image.title = 'load-forever';
     	image.setAttribute('src','still'+x+'.jpg');
     	main.appendChild(image);
     	var main_height = main.offsetHeight;
