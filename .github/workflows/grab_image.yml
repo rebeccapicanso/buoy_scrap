@@ -1,36 +1,36 @@
-name: buoygrab run
+# name: buoygrab run
 
   
 
-on: push
+# on: push
 
   
 
-jobs:
+# jobs:
 
-run-script:
+# run-script:
 
-runs-on: ubuntu-latest
+# runs-on: ubuntu-latest
 
-steps:
+# steps:
 
-- name: Checkout repository
+# - name: Checkout repository
 
-uses: actions/checkout@v2
+# uses: actions/checkout@v2
 
-- name: Set up Python
+# - name: Set up Python
 
-uses: actions/setup-python@v2
+# uses: actions/setup-python@v2
 
-with:
+# with:
 
-python-version: '3.11'
+# python-version: '3.11'
 
-- name: Install dependencies
+# - name: Install dependencies
 
-run: pip install BeautifulSoup4
-run: pip install requests
+# run: pip install BeautifulSoup4
+# run: pip install requests
 
-- name: Run script
+# - name: Run script
 
-run: python buoygrab.py
+# run: python buoygrab.py
