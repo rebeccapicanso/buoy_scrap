@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
   <head>
-    <title>load_forever</title>
+    <title>loading</title>
     <meta charset="utf-8" />
     <style type="text/css">
     #main {
@@ -19,12 +19,13 @@
     // you could have it call to the current buoy conditions upon website reload,
     // or constantly scrap the website & store data in database for reuse.
 
-    // ignore insane variable names I'm workshopping that
+    // ignore insane variable names, basically just place holders to get the javascript to work. No current artistic meaning.
     var c = 0;
     var visitsSec = 47193;
-    var texts = 0.0108171;
-    var TextsPerSecond = visitsSec * texts;
-    var treeCo2 = 21.77;
+    var visits = 0.0108171;
+    var vistsPerSecond = visitsSec * texts;
+    // subject to change, will connect to a larger database later & make dynamic variable.
+    var Co2 = 21.77;
     var numStills = 0;
     var image;
     var x = 0;	
@@ -33,7 +34,7 @@
     var last_height = 0;
     
     setInterval(function(){	
-    	c = c + TextsPerSecond;
+    	c = c + visitsPerSecond;
     	x = Math.floor((Math.random() * 9) +1);
     	//numEmojis = Math.floor(TextsPerSecond / treeCo2);
     	numStills = numStills + 1;
