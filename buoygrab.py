@@ -10,7 +10,7 @@ from random import randrange
 
 # this is tracking a single buoy off the coast of the Aleutian Islands!
 # can be expanded to include all 54 buoys, but not recommended unless you are uploading images to
-# google cloud storage or something similar.
+# google cloud storage or something similar. I attached a mockup for a google drive connection that isn't functioning.
 
 # set timezone for Aleutian
 os.environ['TZ'] = 'US/Aleutian'
@@ -39,7 +39,8 @@ for x in hours:
     with open(jpg_name_Z64A, 'wb') as handler:
         handler.write(img_data_Z64A)
 
-    # crop random square from image
+    # crop random square from image using Pillow for html visualization
+    # not necessary
     img = Image.open(jpg_name_Z64A)
     x, y = img.size
 
