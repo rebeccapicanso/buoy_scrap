@@ -4,5 +4,5 @@ Inspired by the efforts of NDBC, the National Data Buoy Center, and Gloria Chung
 
 This project is under development right now, happy to provide psuedocode for unfinished portions. It's training locally on my machine.
 
-At the moment, index.html & buoygrab.py are the most functional.
+At the moment, teststill/index.html & buoygrab.py are the most functional.
 
