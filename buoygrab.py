@@ -7,6 +7,7 @@ import numpy as np
 from PIL import Image
 from random import randrange
 from collections import defaultdict
+# test
 
 def setup():
     os.environ['TZ'] = 'US/Aleutian'
@@ -61,4 +62,3 @@ def get_dominant_color(image):
     return dominant_color
 
 def main():
-    
