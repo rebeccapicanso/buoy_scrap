@@ -121,7 +121,7 @@ def evaluate_model(agent, env, num_episodes):
         total_predictions += 1
     accuracy = correct_predictions / total_predictions
     print(f"Model Accuracy: {accuracy:.2f}")
-
+    
 def main():
     # Load your own images
     image_directory = "path/to/your/image/directory"
@@ -142,6 +142,8 @@ def main():
     
     # Evaluate the model
     evaluate_model(agent, test_env, num_episodes=100)
+    
+    return agent  # Return the trained agent
 
 if __name__ == "__main__":
     main()
