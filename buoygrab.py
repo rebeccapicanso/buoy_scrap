@@ -27,7 +27,7 @@ def setup():
         dynamic_url_Z64A = 'https://www.ndbc.noaa.gov/images/buoycam/Z64A_2024_10_' + yesterday + '_' + x + '10.jpg'
         img_data_Z64A = requests.get(dynamic_url_Z64A).content
 
-        jpg_name_Z64A = 'Z64A_2024_02_' + yesterday + '_' + x + '10.jpg'
+        jpg_name_Z64A = 'Z64A_2024_10_' + yesterday + '_' + x + '11.jpg'
         img = cv2.imread(jpg_name_Z64A)
         jpg_images.append(jpg_name_Z64A)
 
