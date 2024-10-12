@@ -9,7 +9,7 @@ from random import randrange
 from collections import defaultdict
 # test
 
-jpg_images_store = []
+jpg_images = []
 
 def setup():
     os.environ['TZ'] = 'US/Aleutian'
