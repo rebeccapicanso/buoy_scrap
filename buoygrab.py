@@ -9,6 +9,8 @@ from random import randrange
 from collections import defaultdict
 # test
 
+jpg_images_store = []
+
 def setup():
     os.environ['TZ'] = 'US/Aleutian'
     time.tzset()
@@ -16,17 +18,24 @@ def setup():
     hours = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16',
             '17', '18', '19', '20', '21', '22', '23']
 
+    days = 3
+
     count = 0
+
     for x in hours:
         count =+ 1
-        dynamic_url_Z64A = 'https://www.ndbc.noaa.gov/images/buoycam/Z64A_2024_02_' + yesterday + '_' + x + '10.jpg'
+        dynamic_url_Z64A = 'https://www.ndbc.noaa.gov/images/buoycam/Z64A_2024_10_' + yesterday + '_' + x + '10.jpg'
         img_data_Z64A = requests.get(dynamic_url_Z64A).content
 
         jpg_name_Z64A = 'Z64A_2024_02_' + yesterday + '_' + x + '10.jpg'
         img = cv2.imread(jpg_name_Z64A)
+        jpg_images.append(jpg_name_Z64A)
 
         with open(jpg_name_Z64A, 'wb') as handler:
             handler.write(img_data_Z64A)
+        
+    print(f"Downloaded {count} images.")
+
 
 def sort_images_by_color(jpg_name):
     img = Image.open(jpg_name)
@@ -61,4 +70,5 @@ def get_dominant_color(image):
     dominant_color = max(color_counts, key=color_counts.get)
     return dominant_color
 
-def main():
+setup()
+
