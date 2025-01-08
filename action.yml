@@ -1,5 +1,3 @@
-# run the buoygrab file and upload the data to the docker server for gitaction 
-
 name: 'buoy-grab'
 on: push
 
